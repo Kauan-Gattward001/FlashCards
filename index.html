@@ -14,12 +14,11 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #111111, #1c1c1c);
+      background: linear-gradient(to bottom right, #0a0a0a, #1c1c1c);
       color: #f0f0f0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       padding: 2rem 1rem;
       min-height: 100vh;
       overflow-x: hidden;
@@ -27,23 +26,45 @@
 
     header {
       text-align: center;
-      margin-bottom: 3rem;
-      opacity: 0;
-      transform: translateY(-30px);
+      margin-bottom: 2.5rem;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 5px #00000088);
       animation: fadeIn 1s ease forwards;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.8rem;
       color: #ffffff;
+      margin-bottom: 0.5rem;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #cccccc;
       max-width: 700px;
       margin: 0 auto;
+    }
+
+    .art-section {
+      margin: 3rem 0;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .art-section img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.08);
+      transition: transform 0.4s ease;
+    }
+
+    .art-section img:hover {
+      transform: scale(1.02);
     }
 
     .cards-grid {
@@ -80,7 +101,6 @@
     footer {
       margin-top: 4rem;
       text-align: center;
-      opacity: 0;
       animation: fadeIn 1s ease 1s forwards;
     }
 
@@ -101,16 +121,6 @@
       transform: scale(1.05);
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-    }
-
     /* Animações */
     @keyframes fadeIn {
       to {
@@ -126,7 +136,7 @@
       }
     }
 
-    /* Delay em cascata nos cards */
+    /* Delay animado nos cards */
     .card-link:nth-child(1) { animation-delay: 0.1s; }
     .card-link:nth-child(2) { animation-delay: 0.2s; }
     .card-link:nth-child(3) { animation-delay: 0.3s; }
@@ -137,13 +147,32 @@
     .card-link:nth-child(8) { animation-delay: 0.8s; }
     .card-link:nth-child(9) { animation-delay: 0.9s; }
     .card-link:nth-child(10) { animation-delay: 1.0s; }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .logo {
+        width: 100px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="./assets/IMG_6075.png" alt="Logo Sublime" class="logo" />
     <h1>Sublime Web Cards</h1>
     <p>Cartões digitais modernos criados para nossos clientes — veja abaixo exemplos reais desenvolvidos pela Sublime para pequenas empresas e profissionais independentes.</p>
   </header>
+
+  <section class="art-section">
+    <img src="./assets/451253167_1003597927619590_2060656655086846563_n.jpg" alt="Artistas Sublime" />
+  </section>
 
   <section class="cards-grid">
     <a class="card-link" href="./Barbeiro_Cabeleireiro/">Barbeiro</a>
@@ -156,6 +185,10 @@
     <a class="card-link" href="./Fotografo/">Fotógrafo</a>
     <a class="card-link" href="./Consultoria_Empresarial/">Consultoria</a>
     <a class="card-link" href="./Personal_Trainer_Fitness/">Personal Trainer</a>
+  </section>
+
+  <section class="art-section" style="margin-top: 3rem;">
+    <img src="./assets/sublime_bastidores.gif" alt="GIF de bastidores" />
   </section>
 
   <footer>
