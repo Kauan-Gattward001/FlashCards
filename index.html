@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sublime Web Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #d0d0d0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card-link {
+      background: #ffffff10;
+      border: 1px solid #ffffff30;
+      backdrop-filter: blur(6px);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .card-link:hover {
+      background-color: #ffffff30;
+      transform: translateY(-4px);
+    }
+
+    footer {
+      margin-top: 4rem;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp:hover {
+      background-color: #1ebe57;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sublime Web Cards</h1>
+    <p>Cartões digitais modernos para pequenas empresas e empreendedores</p>
+  </header>
+
+  <section class="cards-grid">
+    <a class="card-link" href="./Barbeiro_Cabeleireiro/">Barbeiro</a>
+    <a class="card-link" href="./Manicure_Estetica/">Manicure</a>
+    <a class="card-link" href="./Lanchonete_Food_Truck/">Lanchonete</a>
+    <a class="card-link" href="./Prestador_Servicos/">Serviços</a>
+    <a class="card-link" href="./Artesao_Crochê/">Artesanato</a>
+    <a class="card-link" href="./Musico_DJ_Produtor/">DJ / Músico</a>
+    <a class="card-link" href="./Designer_Grafico/">Designer</a>
+    <a class="card-link" href="./Fotografo/">Fotógrafo</a>
+    <a class="card-link" href="./Consultoria_Empresarial/">Consultoria</a>
+    <a class="card-link" href="./Personal_Trainer_Fitness/">Personal Trainer</a>
+  </section>
+
+  <footer>
+    <p>Entre em contato para criar seu cartão personalizado:</p>
+    <a class="whatsapp" href="https://wa.me/5599999999999" target="_blank">Falar no WhatsApp</a>
+  </footer>
+</body>
+</html>
