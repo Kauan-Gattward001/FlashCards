@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,33 +8,37 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: #fff;
+      background: linear-gradient(to bottom right, #111111, #1c1c1c);
+      color: #f0f0f0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       padding: 2rem 1rem;
       min-height: 100vh;
-      text-align: center;
     }
 
     header {
+      text-align: center;
       margin-bottom: 3rem;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      color: #ffffff;
     }
 
     p {
       font-size: 1.2rem;
-      color: #d0d0d0;
+      color: #cccccc;
+      max-width: 700px;
     }
 
     .cards-grid {
@@ -44,27 +47,30 @@
       gap: 1.5rem;
       width: 100%;
       max-width: 1000px;
+      margin-top: 2rem;
     }
 
     .card-link {
-      background: #ffffff10;
-      border: 1px solid #ffffff30;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(6px);
-      color: white;
+      color: #fff;
       padding: 1.5rem;
       border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
+      text-align: center;
       transition: 0.3s ease;
     }
 
     .card-link:hover {
-      background-color: #ffffff30;
-      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
     }
 
     footer {
       margin-top: 4rem;
+      text-align: center;
     }
 
     .whatsapp {
@@ -72,7 +78,7 @@
       margin-top: 1rem;
       padding: 0.75rem 1.5rem;
       background-color: #25d366;
-      color: #fff;
+      color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
@@ -82,12 +88,22 @@
     .whatsapp:hover {
       background-color: #1ebe57;
     }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Sublime Web Cards</h1>
-    <p>Cartões digitais modernos para pequenas empresas e empreendedores</p>
+    <p>Cartões digitais modernos criados para nossos clientes — veja abaixo exemplos reais desenvolvidos pela Sublime para pequenas empresas e profissionais independentes.</p>
   </header>
 
   <section class="cards-grid">
@@ -95,7 +111,7 @@
     <a class="card-link" href="./Manicure_Estetica/">Manicure</a>
     <a class="card-link" href="./Lanchonete_Food_Truck/">Lanchonete</a>
     <a class="card-link" href="./Prestador_Servicos/">Serviços</a>
-    <a class="card-link" href="./Artesao_Crochê/">Artesanato</a>
+    <a class="card-link" href="./Artesao_Croche/">Artesanato</a>
     <a class="card-link" href="./Musico_DJ_Produtor/">DJ / Músico</a>
     <a class="card-link" href="./Designer_Grafico/">Designer</a>
     <a class="card-link" href="./Fotografo/">Fotógrafo</a>
@@ -104,7 +120,7 @@
   </section>
 
   <footer>
-    <p>Entre em contato para criar seu cartão personalizado:</p>
+    <p>Entre em contato para criar o seu cartão personalizado:</p>
     <a class="whatsapp" href="https://wa.me/5599999999999" target="_blank">Falar no WhatsApp</a>
   </footer>
 </body>
