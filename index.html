@@ -28,13 +28,19 @@
       text-align: center;
       margin-bottom: 2.5rem;
       animation: fadeIn 1s ease forwards;
+      position: relative;
     }
 
     .logo {
-      width: 100px;
+      width: 90px;
       margin-bottom: 1rem;
-      filter: drop-shadow(0 0 5px #00000088);
-      animation: fadeIn 1s ease forwards;
+      opacity: 0.7;
+      animation: float 3s ease-in-out infinite;
+      transition: opacity 0.3s ease;
+    }
+
+    .logo:hover {
+      opacity: 1;
     }
 
     h1 {
@@ -50,22 +56,44 @@
       margin: 0 auto;
     }
 
-    .art-section {
-      margin: 3rem 0;
-      text-align: center;
+    .featured-image {
+      margin: 3rem auto 2rem;
+      max-width: 700px;
+      width: 90%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 1rem;
       animation: fadeIn 1s ease forwards;
-    }
-
-    .art-section img {
-      width: 60%;
-      max-width: 500px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.05);
       transition: transform 0.4s ease;
     }
 
-    .art-section img:hover {
-      transform: scale(1.02);
+    .featured-image:hover {
+      transform: scale(1.01);
+    }
+
+    .featured-image img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .gif-highlight {
+      margin: 2rem auto 0;
+      max-width: 400px;
+      width: 80%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .gif-highlight img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
     }
 
     .cards-grid {
@@ -122,6 +150,24 @@
       transform: scale(1.05);
     }
 
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .logo {
+        width: 70px;
+      }
+
+      .gif-highlight {
+        width: 95%;
+      }
+    }
+
     /* Animações */
     @keyframes fadeIn {
       to {
@@ -137,7 +183,12 @@
       }
     }
 
-    /* Delay animado nos cards */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
     .card-link:nth-child(1) { animation-delay: 0.1s; }
     .card-link:nth-child(2) { animation-delay: 0.2s; }
     .card-link:nth-child(3) { animation-delay: 0.3s; }
@@ -148,24 +199,6 @@
     .card-link:nth-child(8) { animation-delay: 0.8s; }
     .card-link:nth-child(9) { animation-delay: 0.9s; }
     .card-link:nth-child(10) { animation-delay: 1.0s; }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .logo {
-        width: 80px;
-      }
-
-      .art-section img {
-        width: 90%;
-      }
-    }
   </style>
 </head>
 <body>
@@ -175,9 +208,9 @@
     <p>Cartões digitais modernos criados para nossos clientes — veja abaixo exemplos reais desenvolvidos pela Sublime para pequenas empresas e profissionais independentes.</p>
   </header>
 
-  <section class="art-section">
+  <div class="featured-image">
     <img src="./assets/451253167_1003597927619590_2060656655086846563_n.jpg" alt="Artistas Sublime" />
-  </section>
+  </div>
 
   <section class="cards-grid">
     <a class="card-link" href="./Barbeiro_Cabeleireiro/">Barbeiro</a>
@@ -192,5 +225,13 @@
     <a class="card-link" href="./Personal_Trainer_Fitness/">Personal Trainer</a>
   </section>
 
-  <section class="art-section" style="margin-top: 3rem;">
-    <img src="./assets/sublime_bastidores.gif" alt="GIF de bastidores" style="width: 50%;_
+  <div class="gif-highlight">
+    <img src="./assets/sublime_bastidores.gif" alt="Bastidores em ação" />
+  </div>
+
+  <footer>
+    <p>Entre em contato para criar o seu cartão personalizado:</p>
+    <a class="whatsapp" href="https://wa.me/5599999999999" target="_blank">Falar no WhatsApp</a>
+  </footer>
+</body>
+</html>
