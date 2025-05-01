@@ -16,66 +16,54 @@
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to bottom right, #111111, #1c1c1c);
       color: #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       height: 100vh;
       overflow: hidden;
       position: relative;
-      padding: 2rem;
     }
 
-    .background-img {
+    .background-gif {
       position: absolute;
-      bottom: 0;
-      right: 0;
-      max-width: 400px;
-      opacity: 0.07;
+      top: 0;
+      left: 0;
       z-index: 0;
-      animation: fadeIn 2s ease forwards;
-    }
-
-    .logo-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-      animation: fadeIn 1s ease forwards;
-    }
-
-    .logo-container a {
-      display: inline-block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.07;
     }
 
     .logo {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    .logo img {
+      height: 80px;
       transition: transform 0.3s ease;
     }
 
-    .logo:hover {
+    .logo img:hover {
       transform: scale(1.05);
     }
 
     header {
       text-align: center;
-      margin-bottom: 1.5rem;
-      z-index: 5;
+      z-index: 2;
+      position: relative;
       animation: fadeIn 1s ease forwards;
+      padding-top: 40px;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 0.5rem;
       color: #ffffff;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #cccccc;
       max-width: 700px;
       margin: 0 auto;
@@ -83,12 +71,13 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
-      width: 100%;
-      max-width: 900px;
-      margin-top: 1.5rem;
-      z-index: 5;
+      width: 90%;
+      max-width: 1000px;
+      margin: 2rem auto 0 auto;
+      z-index: 2;
+      position: relative;
     }
 
     .card-link {
@@ -96,7 +85,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(6px);
       color: #fff;
-      padding: 1rem;
+      padding: 1.2rem;
       border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
@@ -113,16 +102,41 @@
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
     }
 
+    .art-images {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1;
+      opacity: 0.8;
+    }
+
+    .art-images img {
+      height: 80px;
+      border-radius: 12px;
+      filter: brightness(0.9) contrast(1.1);
+      transition: transform 0.3s ease;
+    }
+
+    .art-images img:hover {
+      transform: scale(1.05);
+    }
+
     footer {
-      margin-top: 1.5rem;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
-      z-index: 5;
+      opacity: 0;
       animation: fadeIn 1s ease 1s forwards;
+      z-index: 2;
     }
 
     .whatsapp {
       display: inline-block;
-      margin-top: 0.8rem;
+      margin-top: 0.5rem;
       padding: 0.6rem 1.2rem;
       background-color: #25d366;
       color: white;
@@ -135,6 +149,29 @@
     .whatsapp:hover {
       background-color: #1ebe57;
       transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .art-images {
+        flex-direction: column;
+        right: 10px;
+      }
+
+      .art-images img {
+        height: 60px;
+      }
+
+      .logo img {
+        height: 60px;
+      }
     }
 
     @keyframes fadeIn {
@@ -161,30 +198,18 @@
     .card-link:nth-child(8) { animation-delay: 0.8s; }
     .card-link:nth-child(9) { animation-delay: 0.9s; }
     .card-link:nth-child(10) { animation-delay: 1.0s; }
-
-    @media (max-height: 700px) {
-      body {
-        padding: 1rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .card-link {
-        padding: 0.8rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- LOGO COM LINK PARA INSTAGRAM -->
-  <div class="logo-container">
-    <a href="https://www.instagram.com/seu_perfil_sublime" target="_blank">
-      <img src="./assets/IMG_6075.png" alt="Logo Sublime" class="logo" />
-    </a>
-  </div>
+  <!-- GIF de fundo -->
+  <img class="background-gif" src="gif_de_fundo.gif" alt="Decorativo" />
 
+  <!-- Logo com link -->
+  <a class="logo" href="https://instagram.com/sublime.entertainment" target="_blank">
+    <img src="logo_sublime.png" alt="Logo Sublime" />
+  </a>
+
+  <!-- Conteúdo principal -->
   <header>
     <h1>Sublime Web Cards</h1>
     <p>Cartões digitais modernos criados para nossos clientes — veja abaixo exemplos reais desenvolvidos pela Sublime para pequenas empresas e profissionais independentes.</p>
@@ -203,6 +228,13 @@
     <a class="card-link" href="./Personal_Trainer_Fitness/">Personal Trainer</a>
   </section>
 
+  <!-- Imagens artísticas -->
+  <div class="art-images">
+    <img src="artista1.jpg" alt="Artista 1" />
+    <img src="artista2.jpg" alt="Artista 2" />
+  </div>
+
+  <!-- Contato -->
   <footer>
     <p>Entre em contato para criar o seu cartão personalizado:</p>
     <a class="whatsapp" href="https://wa.me/5599999999999" target="_blank">Falar no WhatsApp</a>
